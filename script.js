@@ -1,5 +1,4 @@
 const grid = document.querySelector(".grid");
-// const input = document.querySelector("input");
 const button = document.querySelector("button");
 const clearBtn = document.querySelector("#erase");
 const slider = document.querySelector("#sliderSize");
@@ -10,10 +9,12 @@ function clearGrid() {
   grid.innerHTML = "";
 }
 
+let isDrawing = false;
+
 function drawGrid(size) {
+  clearGrid();
   if (size < 2 || size > 100) {
     alert("Pick a number between 2 and 100");
-    clearGrid();
     drawGrid(slider.value);
     return;
   }
@@ -23,7 +24,20 @@ function drawGrid(size) {
 
   for (c = 0; c < size * size; c++) {
     let cell = document.createElement("div");
-    cell.addEventListener("mouseover", () => cell.classList.add("active"));
+    cell.addEventListener("mousedown", () => {
+      isDrawing = true;
+      if (isDrawing) {
+        cell.classList.add("active");
+      }
+    });
+    cell.addEventListener("mouseover", () => {
+      if (isDrawing) {
+        cell.classList.add("active");
+      }
+    });
+    cell.addEventListener("mouseup", () => {
+      isDrawing = false;
+    });
     grid.appendChild(cell).className = "grid-item";
   }
 }
