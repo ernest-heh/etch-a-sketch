@@ -1,7 +1,10 @@
 const grid = document.querySelector(".grid");
-const input = document.querySelector("input");
+// const input = document.querySelector("input");
 const button = document.querySelector("button");
 const clearBtn = document.querySelector("#erase");
+const slider = document.querySelector("#sliderSize");
+const output = document.querySelector("#outputSize");
+output.innerHTML = slider.value;
 
 function clearGrid() {
   grid.innerHTML = "";
@@ -30,17 +33,24 @@ drawGrid(16);
 const cells = document.querySelectorAll(".grid-item");
 
 function eraseGrid() {
+  clearGrid();
   cells.forEach((cell) => {
     cell.classList.remove("active");
   });
+  drawGrid(slider.value);
 }
 
-button.addEventListener("click", (e) => {
-  e.preventDefault();
+slider.oninput = function () {
+  output.innerHTML = this.value;
   clearGrid();
-  drawGrid(input.value);
-  input.value = "";
-});
+  drawGrid(slider.value);
+};
+
+// button.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   clearGrid();
+//   drawGrid(slider.value);
+// });
 
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault();

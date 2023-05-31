@@ -15,7 +15,7 @@
           <h1>Etch-a-Sketch</h1>
           <p>Click on the squares to draw.</p>
           <div class="controls">
-            <form>
+            <!-- <form>
               <input
                 placeholder="Key in a number..."
                 type="number"
@@ -23,7 +23,17 @@
                 max="100"
               />
               <button>Generate Grid</button>
-            </form>
+            </form> -->
+            <div class="slider">
+              <input
+                id="sliderSize"
+                type="range"
+                value="24"
+                min="16"
+                max="64"
+              />
+              <span id="outputSize"></span>
+            </div>
             <button id="erase">Clear All</button>
           </div>
         </div>

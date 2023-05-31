@@ -116,13 +116,35 @@ select {
   margin-top: 2rem;
 }
 
-input {
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider input[type="range"] {
+  width: 200px;
+  height: 2px;
+  border: none;
+  outline: none;
+}
+
+.slider input[type="range"]::webkit-slider-thumb {
+  width: 30px;
+  height: 30px;
+  background: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* input {
   min-width: 150px;
   border: none;
   padding: 0.4rem 0.4rem;
   border-radius: 0.4rem;
   margin-right: 0.4rem;
-}
+} */
 
 button {
   background-color: hsl(187, 54%, 66%);
