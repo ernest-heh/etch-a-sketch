@@ -35,7 +35,6 @@ html:focus-within {
 /* Set core body defaults */
 body {
   font-family: "Satoshi", sans-serif;
-  letter-spacing: -0.02rem;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -47,7 +46,7 @@ h2,
 h3,
 h4 {
   font-family: "Clash Grotesk", sans-serif;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 /* A elements that don't have a class get default styles */
@@ -86,6 +85,11 @@ select {
   }
 }
 
+:root {
+  --grid-rows: 1;
+  --grid-cols: 1;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -103,4 +107,11 @@ select {
   width: 800px;
   height: 800px;
   background-color: white;
+  display: grid;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-item {
+  border: 1px solid hsla(187, 54%, 66%, 0.4);
 }
