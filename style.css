@@ -85,9 +85,29 @@ select {
   }
 }
 
-:root {
-  --grid-rows: 1;
-  --grid-cols: 1;
+/* Range Input */
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
 
 .container {
@@ -121,20 +141,32 @@ select {
   gap: 0.5rem;
 }
 
-.slider input[type="range"] {
-  width: 200px;
-  height: 2px;
-  border: none;
-  outline: none;
+/* Special styling for WebKit/Blink */
+
+input[type="range"] {
+  width: 180px;
 }
 
-.slider input[type="range"]::webkit-slider-thumb {
-  width: 30px;
-  height: 30px;
-  background: black;
-  border: 2px solid black;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* border: 1px solid #000000; */
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
+  background: white;
   cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1.5rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  background: #999;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #999;
 }
 
 .slider #outputSize {
