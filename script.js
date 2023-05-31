@@ -1,5 +1,4 @@
 const grid = document.querySelector(".grid");
-const button = document.querySelector("button");
 const clearBtn = document.querySelector("#erase");
 const slider = document.querySelector("#sliderSize");
 const output = document.querySelector("#outputSize");
