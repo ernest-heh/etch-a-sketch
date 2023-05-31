@@ -14,15 +14,18 @@
         <div class="header">
           <h1>Etch-a-Sketch</h1>
           <p>Click on the squares to draw.</p>
-          <form>
-            <input
-              placeholder="Key in a number..."
-              type="number"
-              min="2"
-              max="100"
-            />
-            <button>Generate Grid</button>
-          </form>
+          <div class="controls">
+            <form>
+              <input
+                placeholder="Key in a number..."
+                type="number"
+                min="2"
+                max="100"
+              />
+              <button>Generate Grid</button>
+            </form>
+            <button id="erase">Clear All</button>
+          </div>
         </div>
         <div class="grid"></div>
       </div>
