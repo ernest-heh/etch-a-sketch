@@ -112,8 +112,7 @@ select {
 .controls {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .slider {
@@ -136,6 +135,13 @@ select {
   border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.slider #outputSize {
+  padding: 0.2rem 0.4rem;
+  background-color: hsl(187, 54%, 66%);
+  border-radius: 0.4rem;
+  color: white;
 }
 
 /* input {

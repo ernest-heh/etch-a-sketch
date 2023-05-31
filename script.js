@@ -14,7 +14,7 @@ function drawGrid(size) {
   if (size < 2 || size > 100) {
     alert("Pick a number between 2 and 100");
     clearGrid();
-    drawGrid(16);
+    drawGrid(slider.value);
     return;
   }
 
@@ -28,7 +28,7 @@ function drawGrid(size) {
   }
 }
 
-drawGrid(16);
+drawGrid(slider.value);
 
 const cells = document.querySelectorAll(".grid-item");
 
