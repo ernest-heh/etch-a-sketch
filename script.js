@@ -60,12 +60,6 @@ slider.oninput = function () {
   drawGrid(slider.value);
 };
 
-// button.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   clearGrid();
-//   drawGrid(slider.value);
-// });
-
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault();
   eraseGrid();
