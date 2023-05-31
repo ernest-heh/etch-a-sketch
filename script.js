@@ -9,4 +9,11 @@ function drawGrid(rows, cols) {
   }
 }
 
-drawGrid(16, 16);
+drawGrid(32, 32);
+
+const squares = document.querySelectorAll(".grid-item");
+squares.forEach((square) => {
+  square.addEventListener("mouseover", () => {
+    square.style["background-color"] = "grey";
+  });
+});
