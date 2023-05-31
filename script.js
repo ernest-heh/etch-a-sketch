@@ -13,11 +13,6 @@ let isDrawing = false;
 
 function drawGrid(size) {
   clearGrid();
-  if (size < 2 || size > 100) {
-    alert("Pick a number between 2 and 100");
-    drawGrid(slider.value);
-    return;
-  }
 
   grid.style["grid-template-columns"] = `repeat(${size}, 1fr)`;
   grid.style["grid-template-rows"] = `repeat(${size}, 1fr)`;
